@@ -1,0 +1,36 @@
+
+<html>
+<head>
+    <title>Dynamic Table Generator</title>
+    <script>
+        function gen(){
+
+
+            let rows = parseInt(prompt("Enter number of rows:"));
+            let cols = parseInt(prompt("Enter number of columns:"));
+            let table = document.createElement("table");
+            table.border = "1";
+            
+            for (let i = 0; i < rows; i++) {
+                let tr = document.createElement("tr");
+                for (let j = 0; j < cols; j++) {
+                    let td = document.createElement("td");
+                    td.textContent =` hello  `;
+                    tr.appendChild(td);
+                }
+                table.appendChild(tr);
+            }
+            
+            let container = document.getElementById("tableContainer");
+
+            container.innerHTML = ""; 
+            container.appendChild(table);
+        }
+    </script>
+</head>
+<body>
+    <h1>Dynamic Table Generator</h1>
+    <button onclick="gen()">Generate Table</button>
+    <div id="tableContainer"></div>
+</body>
+</html>

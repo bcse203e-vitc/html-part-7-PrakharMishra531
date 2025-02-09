@@ -1,1 +1,40 @@
+<html>
+<head>
+    <title>Guess the Number Game</title>
+    <script>
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+        let attempts = 5;
 
+        function checkGuess() {
+            while (attempts > 0) {
+
+                let Guess = parseInt(prompt("Guess a number between 1 and 100:"));
+                
+                if (isNaN(Guess) || Guess < 1 || Guess > 100) {
+                    console.log("Please enter a valid number between 1 and 100.");
+                    continue;
+                }
+
+                attempts--;
+
+                if (Guess === randomNumber) {
+                    console.log("You guessed the number!");
+                    return;
+                } else if (attempts > 0) {
+                    console.log(Guess < randomNumber ? "Too low! Try again." : "Too high! Try again.");
+                    console.log(`Attempts left: ${attempts}`);
+                } else {
+                    console.log(`Game over! The correct number was ${randomNumber}.`);
+                }
+            }
+        }
+
+        checkGuess();
+
+    </script>
+</head>
+<body>
+  
+    <h1>Open the console to check the result</h1>
+</body>
+</html>

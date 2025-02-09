@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Palindrome Checker</title>
+    <script>
+
+        function isPalindrome(str) {
+            let cleanedStr = str.replace(/[^a-z0-9]/g, '');
+            return cleanedStr === cleanedStr.split('').reverse().join('');
+        }
+
+        function checkPalindrome() {
+            let input = prompt("Enter a word for Palindrome:");
+            console.log(isPalindrome(input) ? "It's a palindrome!" : "Not a palindrome.");
+        }
+
+        checkPalindrome();
+
+    </script>
+</head>
+<body>
+    <h1>Open the console to see the resukt</h1>
+</body>
+</html>

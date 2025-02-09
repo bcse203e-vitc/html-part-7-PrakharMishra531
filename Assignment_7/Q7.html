@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title> 2ND largest Number</title>
+    <script>
+      function find(arr, rank) {
+            let uniqueArr = [...new Set(arr)].map(Number).sort((a, b) => b - a);
+            return uniqueArr.length >= rank ? uniqueArr[rank - 1] : null;
+        }
+        
+        let input = prompt("Enter numbers with comma:");
+        if (input) {
+            let numArray = input.split(',').map(num => num.trim()).filter(num => !isNaN(num));
+            
+            let secondLargest = find(numArray, 2);
+            let thirdLargest = find(numArray, 3);
+            
+            console.log("Second largest number:",secondLargest);
+            console.log("Third largest number:",thirdLargest );
+        } 
+    </script>
+</head>
+<body>
+    <h1>Open the console to see the resukt</h1>
+</body>
+</html>

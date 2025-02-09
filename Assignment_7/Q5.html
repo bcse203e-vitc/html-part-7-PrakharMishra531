@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>Palindrome Checker</title>
+    <script>
+
+function count() {
+            let input = prompt("Enter a sentence:");
+            
+            let charCount = input.length;
+            let words = input.trim().split(/\s+/);
+            let wordCount = words.length;
+            
+            let wordFrequency = {};
+            words.forEach(word => {
+                word = word.toLowerCase();
+                wordFrequency[word] = (wordFrequency[word] || 0) + 1;
+            });
+            
+            console.log(`Character count: ${charCount}`);
+            console.log(`Word count: ${wordCount}`);
+            console.log("Repeated words:");
+            for (let word in wordFrequency) {
+                if (wordFrequency[word] > 1) {
+                    console.log(`${word}: ${wordFrequency[word]} times`);
+                }
+            }
+        }
+
+        count();
+
+    </script>
+</head>
+<body>
+    <h1>Open the console to see the resukt</h1>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title> sorting </title>
+    <script>
+      function bubbleSort(arr, ascending = true) {
+            let len = arr.length;
+            for (let i = 0; i < len - 1; i++) {
+                for (let j = 0; j < len - 1 - i; j++) {
+                    if ((ascending && arr[j] > arr[j + 1]) || (!ascending && arr[j] < arr[j + 1])) {
+                        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+                    }
+                }
+            }
+            return arr;
+        }
+        
+        let input = prompt("Enter numbers separated by commas:");
+      
+        let numArray = input.split(',').map(num => parseFloat(num.trim())).filter(num => !isNaN(num));
+        console.log("Sorted in ascending order:", bubbleSort([numArray], true));
+        console.log("Sorted in descending order:", bubbleSort([numArray], false));
+        
+    </script>
+</head>
+<body>
+    <h1>Open the console to see the resukt</h1>
+</body>
+</html>

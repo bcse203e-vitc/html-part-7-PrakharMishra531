@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title> Duplicate in array</title>
+    <script>
+
+        function find(arr) {
+            let seen = new Set();
+            let duplicates = new Set();
+            
+            arr.forEach(num => {
+                if (seen.has(num)) {
+                    duplicates.add(num);
+                } else {seen.add(num);}
+            });
+            return Array.from(duplicates);
+        }
+        function removeDuplicates(arr) {
+            return Array.from(new Set(arr));
+        }
+
+        let input = prompt("Enter numbers separated by commas:");
+
+
+        if (input) {
+            let numArray = input.split(',').map(num => num.trim()).filter(num => num !== "");
+            console.log("Duplicate values:", find(numArray));
+            console.log("Unique values:", removeDuplicates(numArray));
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Open the console to see the resukt</h1>
+</body>
+</html>
